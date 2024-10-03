@@ -1,0 +1,235 @@
+body {
+  background-color: hsl(49, 19%, 88%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  width: 1100px;
+  height: 960px;
+  border: 1rem solid  rgb(245, 245, 220);
+  border-radius: 16px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  cursor: crosshair;
+  width: 100%;
+  height: 100%;
+}
+
+.element {
+  box-sizing: border-box;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.element:hover {
+  border-color: rgba(0, 0, 0, 0.3); /* Darken the border on hover */
+  transform: scale(1.5); /* Slightly enlarge on hover */
+}
+
+.content1 {
+  
+  background-color: gray; /* Fond bleu foncé */
+  border-radius: 16px; /* Coins arrondis */
+  min-height: 900px; /* Hauteur minimum */
+  min-width: 1180px; /* Largeur minimum */
+  display: flex; /* Flexbox pour le contenu intérieur */
+  flex-direction: column; /* Empilement vertical */
+  justify-content: center; /* Centre le contenu */
+  align-items: center; /* Centre verticalement */
+  border: 10px solid rgba(252, 248, 248, 0.05); /* Bordure blanche visible */
+  color: white; /* Couleur du texte */
+  flex-grow: 1;
+}
+
+.header {
+  display: flex; /* Flexbox pour l'en-tête */
+  justify-content: space-between; /* Espace entre les éléments */
+  align-items: center; /* Centre les éléments verticalement */
+  min-width: 1100px; /* Largeur minimum */
+  padding: 16px; /* Padding interne */
+}
+
+.input {
+  margin-left: 50px; /* Espace à gauche */
+}
+
+.profile-container {
+  width: 50px; /* Largeur du conteneur */
+  height: 50px; /* Hauteur du conteneur */
+  overflow: hidden; /* Masquer le débordement */
+  border-radius: 50%; /* Forme circulaire */
+  display: flex; /* Flexbox pour l'image */
+  justify-content: center; /* Centre l'image horizontalement */
+  align-items: center; /* Centre l'image verticalement */
+}
+
+.profile-image {
+  width: 100%; /* Image prend toute la largeur */
+  height: auto; /* Conserve le ratio d'aspect */
+}
+
+.money {
+  align-self: flex-end; /* Aligne à l'extrémité */
+  margin-left: auto; /* Pousse à droite */
+  margin-right: 50px; /* Espace à gauche */
+  min-width: 100px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  border: 2px solid; /* Épaisseur de la bordure */
+  border-image: linear-gradient(45deg, #00bfff, #8a2be2) 1;
+  
+}
+
+.block {
+  display: flex;
+  min-width: 1200px;
+  min-height: 800px;
+  align-items: center;
+  margin-top: auto; /* Espace au-dessus */
+  justify-content: space-between;
+}
+
+.lien {
+  width: 50px; /* Largeur des liens */
+}
+
+.link {
+  display: flex;
+  flex-direction: column; /* Disposition verticale des liens */
+  margin-left: 5px; /* Espace à gauche */
+}
+
+
+.i-logo {
+  width: 50px; /* Largeur du logo */
+  height: auto; /* Conserve le ratio d'aspect */
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+}
+
+.input1 {
+  border-radius: 12px; /* Coins arrondis */
+  border: transparent; /* Pas de bordure */
+  background-color:white; /* Couleur de fond */
+  color: gray; /* Couleur du texte */
+  width: 300px; /* Largeur du champ */
+  height: 20px; /* Hauteur du champ */
+  padding: 10px; /* Padding interne */
+}
+
+.input1::placeholder {
+  color: gray; /* Couleur du placeholder */
+}
+
+.money-title{
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-size: 15px; /* Ajuste la taille selon tes besoins */
+  font-weight: bold;
+  color: #fff; /* Ajuste la couleur */
+}
+
+.money-val{
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  font-style: normal;
+}
+
+
+
+.para{
+  display: flex;
+  width: 1100px;
+
+  justify-content:space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Custom Slider Styles */
+#slider {
+  -webkit-appearance: none;
+  width: 200px;
+  height: 10px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+#slider:hover {
+  opacity: 1;
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+#slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+/* Custom Toggle Button Styles */
+#toggleButton,
+#reset{
+  background-color:beige;
+  border: none;
+  color: gray;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 34px;
+  transition: background-color 0.3s;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+#reset{
+  width: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
