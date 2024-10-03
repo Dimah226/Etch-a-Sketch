@@ -20,6 +20,8 @@ function creation(variable) {
 
         // Set mouseenter event to change color based on chosen teinte
         div.addEventListener("mouseenter", () => coloration.call(div, teinte));
+        div.addEventListener("touchstart", () => coloration.call(div, teinte));  // For mobile touch
+        div.addEventListener("touchmove", () => coloration.call(div, teinte));   // Detects finger moving across elements
     }
 }
 
