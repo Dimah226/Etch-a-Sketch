@@ -19,10 +19,14 @@ function creation(variable) {
         div.style.backgroundColor = `rgba(0, 0, 0, ${div.dataset.opacity})`;
 
         // Set mouseenter event to change color based on chosen teinte
-        div.addEventListener("mouseenter", () => coloration.call(div, teinte));
-        div.addEventListener("touchstart", () => coloration.call(div, teinte));  // For mobile touch
-        div.addEventListener("touchmove", () => coloration.call(div, teinte));   // Detects finger moving across elements
+        div.addEventListener("mouseenter", () => coloration.call(div, teinte))
+
+        div.addEventListener("touchmove", (e) => {
+            e.preventDefault(); // Prevent scrolling when swiping
+            coloration.call(div, teinte);
+        });
     }
+
 }
 
 function coloration(teinte) {
@@ -70,4 +74,31 @@ reset.addEventListener("click", () => {
     elements.forEach(el => { 
         el.style.backgroundColor = "rgba(0, 0, 0, 0)"; 
     });
+});
+
+
+container.addEventListener("touchmove", (e) => {
+    e.preventDefault(); // Prevent page scrolling while swiping
+
+    // Get the position of the touch
+    const touch = e.touches[0];
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+    // Check if the touched element is one of our grid elements
+    if (element && element.classList.contains("element")) {
+        coloration.call(element, teinte); // Apply the color change
+    }
+});
+
+container.addEventListener("touchstart", (e) => {
+    // Prevent the default action for better touch control
+    e.preventDefault();
+
+    // Handle the first touch event
+    const touch = e.touches[0];
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+    if (element && element.classList.contains("element")) {
+        coloration.call(element, teinte); // Apply the color change
+    }
 });
